@@ -1,6 +1,6 @@
 #!/bin/bash
 apt update
-apt install -y nfs-server
+DEBIAN_FRONTEND=noninteractive apt install -y nfs-server
 echo "/nfs-shared 172.16.0.0/12(rw,sync)" >> /etc/exports
 systemctl restart nfs-server
 systemctl enable nfs-server
